@@ -21,6 +21,27 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+  <div class="field">
+    <%= f.label :first_name, "First Name" %><br />
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name, "Last Name" %><br />
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :birth_date, "Date of Birth" %><br />
+    <%= f.date_field :birth_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bio, "Your bio" %><br />
+    <%= f.text_area :birth_date, size:"70x5" %>
+  </div>
+
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
