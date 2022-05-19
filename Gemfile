@@ -33,6 +33,7 @@ gem "jbuilder"
 gem "devise"
 
 gem "rolify"
+gem "pundit", "~> 2.2"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -78,3 +79,5 @@ group :test do
   gem "webdrivers"
 
 end
+
+

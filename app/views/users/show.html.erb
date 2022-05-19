@@ -1,4 +1,5 @@
-<h1>
+<h1 class="title">
+  Profile:
   <%= @user.first_name %>
   <%= @user.last_name %>
 </h1>
@@ -7,3 +8,6 @@
 <p>Birth date: <%= @user.birth_date %></p>
 <p>Phone number: <%= @user.phone_number %></p>
 <p>Bio: <%= @user.bio %></p>
+
+
+<%= link_to 'Edit User Profile', edit_user_registration_path, class: "button is-light" %>

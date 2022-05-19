@@ -21,7 +21,7 @@
         <div class="buttons">
           <% if user_signed_in? %>
             <% current_user.email %>
-            <%= link_to 'Account Settings', edit_user_registration_path, class: "button is-light" %>
+            <%= link_to 'Account Settings', user_path(current_user.id), class: "button is-light" %>
             <%= button_to 'Log Out', destroy_user_session_path, method: :delete, class: "button is-light" %>
           <% else %>
             <%= link_to 'Register', new_user_registration_path, class: "button is-light" %>
