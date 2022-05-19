@@ -2,6 +2,8 @@
   <% @users.each do |user|%>
     <li>
       <%= user.first_name.to_s + ' ' + user.last_name.to_s %>
-    <li>
+      <%= user.roles.pluck(:name) %>
+    </li>
+    
   <% end %>
 </ul>
