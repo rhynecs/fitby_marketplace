@@ -31,9 +31,11 @@ gem "cssbundling-rails"
 gem "jbuilder"
 
 gem "devise"
-
 gem "rolify"
 gem "pundit", "~> 2.2"
+gem 'cloudinary'
+
+
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
