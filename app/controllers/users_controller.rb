@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     # lets users access their own profiles
+    # except admins who can access all profiles
     if current_user.id != @user.id
       authorize @user
     end
