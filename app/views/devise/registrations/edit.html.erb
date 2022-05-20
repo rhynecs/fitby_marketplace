@@ -56,6 +56,11 @@
     <%= f.text_area :bio, size:"70x5" %>
   </div>
 
+  <div class ="field">
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>

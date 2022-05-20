@@ -18,6 +18,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
+    @user.avatar.purge
     @user.destroy
     redirect_to root_path
     flash[:alert] = "User Deleted"

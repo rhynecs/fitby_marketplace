@@ -83,3 +83,7 @@ group :test do
 end
 
 
+
+gem "activestorage-cloudinary-service", "~> 0.2.3"
+
+gem "dotenv-rails", "~> 2.7"

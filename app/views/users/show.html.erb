@@ -1,10 +1,12 @@
 <h1 class="title">
-  Profile:
   <%= @user.first_name %>
   <%= @user.last_name %>
 </h1>
 
-<p>Email: <%= @user.email %></p>
+<% if @user.avatar.attached? %>
+  <%= cl_image_tag @user.avatar.key %>
+<% end %>
+<p>Email: <%= @user.email %></p>  
 <p>Birth date: <%= @user.birth_date %></p>
 <p>Phone number: <%= @user.phone_number %></p>
 <p>Bio: <%= @user.bio %></p>
