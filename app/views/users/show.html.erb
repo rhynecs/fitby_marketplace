@@ -4,7 +4,7 @@
 </h1>
 
 <% if @user.avatar.attached? %>
-  <%= cl_image_tag @user.avatar.key %>
+  <%= cl_image_tag @user.avatar.key, width: 300, cloud_name: 'dsshkpbix' %>
 <% end %>
 <p>Email: <%= @user.email %></p>  
 <p>Birth date: <%= @user.birth_date %></p>

@@ -10,13 +10,17 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body>
+  <body class="container is-max-widescreen">
     <%=render "layouts/navbar" %>
-    <%= yield %>
-    <% flash.each do |key, msg| %>
-      <div class="notification is-warning">
-        <%= msg %>
+    <div class="columns is-mobile is-centered">
+      <div>
+        <%= yield %>
+        <% flash.each do |key, msg| %>
+          <div class="notification is-warning">
+            <%= msg %>
+          </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   </body>
 </html>
