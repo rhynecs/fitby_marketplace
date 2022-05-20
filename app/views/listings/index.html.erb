@@ -1,0 +1,16 @@
+<table class="table">
+  <tr>
+    <th>User</th>
+    <th>Title</th>
+    <th>City</th>
+    <th>Price</th>
+  </tr>
+  <% @listings.each do |listing|%>
+    <tr>
+      <td><%= link_to listing.user, user_path(listing.user.id) %></td>
+      <td><%= listing.title %></td>
+      <td><%= listing.city %></td>
+      <td><%= listing.price %></td>
+    <tr>
+  <% end %>
+</table>

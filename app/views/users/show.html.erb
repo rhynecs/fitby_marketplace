@@ -11,6 +11,6 @@
 <p>Phone number: <%= @user.phone_number %></p>
 <p>Bio: <%= @user.bio %></p>
 
-<% if @user.id == current_user.id%>
-  <%= link_to 'Edit Profile', edit_user_registration_path, class: "button is-light" %>
-<% end %>
+
+<%= link_to 'Edit Profile', update_profile_path(params[:id]), class: "button is-light"%>
+<%= link_to 'Account Settings', edit_user_registration_path, class: "button is-light" %>

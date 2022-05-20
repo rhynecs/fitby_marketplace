@@ -13,4 +13,12 @@ class UserPolicy < ApplicationPolicy
   def show?
     @user.has_role? :admin
   end
+
+  def edit?
+    @user.has_role? :admin
+  end
+
+  def update?
+    edit?
+  end
 end
