@@ -20,7 +20,7 @@ Listing.create!(id: 100,
  city: "Melborune",                                                
  postcode: "3001",                                                 
  price: 0.19999e3,                                                 
- user_id: 1,                                                       
+ user_id: 100,                                                       
  created_at: 'Fri, 20 May 2022 10:56:01.745982000 UTC +00:00',       
  updated_at: 'Fri, 20 May 2022 10:56:02.310275000 UTC +00:00')
 
@@ -37,6 +37,6 @@ Listing.create!(id: 101,
  city: "Melborune",                                                
  postcode: "3004",                                                 
  price: 0.5e3,                                                 
- user_id: 2,                                                       
+ user_id: 101,                                                       
  created_at: 'Fri, 20 May 2022 10:56:01.745982000 UTC +00:00',       
  updated_at: 'Fri, 20 May 2022 10:56:02.310275000 UTC +00:00')
