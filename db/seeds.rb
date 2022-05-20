@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 
-user = User.create!(id: 100, email: "admin@admin.com", password: "admin123", created_at: "2022-05-20 10:35:20.166877000 +0000", updated_at: 
+user = User.create!(id: 100, email: "admin123@admin.com", password: "admin123", created_at: "2022-05-20 10:35:20.166877000 +0000", updated_at: 
     "2022-05-20 10:35:20.166877000 +0000", first_name: "rodger", last_name: "federer", birth_date: "1981-08-08", 
     phone_number: "123456789", bio: "Hi, I teach group tennis lessons! ")
 user.add_role :admin
@@ -24,7 +24,7 @@ Listing.create!(id: 100,
  created_at: 'Fri, 20 May 2022 10:56:01.745982000 UTC +00:00',       
  updated_at: 'Fri, 20 May 2022 10:56:02.310275000 UTC +00:00')
 
-user = User.create!(id: 101, email: "user@user.com", password: "user123", created_at: "2022-05-20 10:35:20.166877000 +0000", updated_at: 
+user = User.create!(id: 101, email: "user123@user.com", password: "user123", created_at: "2022-05-20 10:35:20.166877000 +0000", updated_at: 
     "2022-05-20 10:35:20.166877000 +0000", first_name: "mike", last_name: "tyson", birth_date: "1966-06-30", 
     phone_number: "123456789", bio: "Hi, I teach group boxing lessons! ")
 user.add_role :user
