@@ -4,13 +4,17 @@
     <th>Title</th>
     <th>City</th>
     <th>Price</th>
+    <th>View</th>
   </tr>
   <% @listings.each do |listing|%>
     <tr>
-      <td><%= link_to listing.user, user_path(listing.user.id) %></td>
+      <% user_name = User.find(listing.user_id).first_name + ' ' + User.find(listing.user_id).last_name %>
+      <td><%= link_to user_name, user_path(listing.user.id) %></td>
       <td><%= listing.title %></td>
       <td><%= listing.city %></td>
       <td><%= listing.price %></td>
+      <td><%= link_to 'View Listing', show_listing_path(listing.id), class: "button is-light" %>
+      
     <tr>
   <% end %>
 </table>

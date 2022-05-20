@@ -1,6 +1,6 @@
 <h2>New Listing</h2>
 
-<%= form_with model: [@user, @user.listings.build] do |f| %>
+<%= form_with object: @listing, scope: :listing do |f| %>
   <p>
     <%= f.label :title %>
     <%= f.text_field :title %>
@@ -15,11 +15,9 @@
   </p>
   <p>
     <%= f.label :price %>
-    <%= f.text_field :last_name %>
+    <%= f.text_field :price %>
   </p>
   <p>
   <%= f.submit "Sign up" %>
   </p>
 <% end %>
-
-<%= render "devise/shared/links" %>

@@ -4,14 +4,26 @@ class ListingsController < ApplicationController
   #   @listing = @user.listing.create(listing_params)
   # end
 
+  def index
+    @listings = Listing.all
+  end
+
+  def new
+    @listing = User.find(current_user.id).listings.build
+  end
+
   def create
-    @user = User.find(params[:id])
-    @listing = @user.listings.create(listing_params)
-    redirect_to root_path
+    @listing = User.find(current_user.id).listings.new(listing_params)
+
+    if @listing.save
+      redirect_to @listing
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   private
     def listing_params
-      params.require(:title, :body, :city, :price).permit(:address_line_1, :address_line_2, :postcode, :image)
+      params.require(:listing).permit(:title, :body, :city, :price, :address_line_1, :address_line_2, :postcode, :image)
     end
 end
