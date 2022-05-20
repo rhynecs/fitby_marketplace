@@ -1,16 +1,16 @@
 <h1 class="title">
-  <%= @user.first_name %>
-  <%= @user.last_name %>
+  <%= @listing.title %>
 </h1>
 
-<% if @user.avatar.attached? %>
-  <%= cl_image_tag @user.avatar.key, width: 300, cloud_name: 'dsshkpbix' %>
+<% if @listing.main_image.attached? %>
+  <%= cl_image_tag @listing.main_image.key, width: 300, cloud_name: 'dsshkpbix' %>
 <% end %>
-<p>Email: <%= @user.email %></p>  
-<p>Birth date: <%= @user.birth_date %></p>
-<p>Phone number: <%= @user.phone_number %></p>
-<p>Bio: <%= @user.bio %></p>
-
-
-<%= link_to 'Edit Profile', update_profile_path(params[:id]), class: "button is-light"%>
-<%= link_to 'Account Settings', edit_user_registration_path, class: "button is-light" %>
+<p><%= @listing.body %></p>  
+<p><%= @listing.address_line_1 %></p> 
+<p><%= @listing.address_line_2 %></p>
+<p><%= @listing.city %></p>
+<p><%= @listing.postcode %></p>
+<emphasis><%= @listing.price %></emphasis>
+<h3>Posted by:</h3>
+<% user_name = User.find(@listing.user_id).first_name + ' ' + User.find(@listing.user_id).last_name %>
+<p><%= link_to user_name, user_path(@listing.user.id) %></p>

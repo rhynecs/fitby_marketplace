@@ -6,22 +6,6 @@ class UserPolicy < ApplicationPolicy
     # end
   end
 
-  def index?
-    @user.has_role? :admin
-  end
-
-  def show?
-    @user.has_role? :admin
-  end
-
-  def edit?
-    @user.has_role? :admin
-  end
-
-  def update?
-    edit?
-  end
-
   def destroy?
     @user.has_role? :admin
   end

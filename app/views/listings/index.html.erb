@@ -1,5 +1,6 @@
 <table class="table">
   <tr>
+    <th>Image</th>
     <th>User</th>
     <th>Title</th>
     <th>City</th>
@@ -8,13 +9,22 @@
   </tr>
   <% @listings.each do |listing|%>
     <tr>
+      <td>
+        <% if listing.main_image.attached? %>
+          <%= cl_image_tag listing.main_image.key, width: 300, cloud_name: 'dsshkpbix' %>
+        <% end %>
+      </td>
       <% user_name = User.find(listing.user_id).first_name + ' ' + User.find(listing.user_id).last_name %>
       <td><%= link_to user_name, user_path(listing.user.id) %></td>
       <td><%= listing.title %></td>
       <td><%= listing.city %></td>
       <td><%= listing.price %></td>
-      <td><%= link_to 'View Listing', show_listing_path(listing.id), class: "button is-light" %>
-      
+      <td>
+        <%= link_to 'View Listing', show_listing_path(listing.id), class: "button is-light" %>
+        <% if current_user.has_role? :admin || (current_user.id == listing.user_id)%>
+          <%= button_to "Delete Listing", delete_listing_path(listing.id), class: "button is-danger", method: :delete %>
+        <% end %>
+      </td>
     <tr>
   <% end %>
 </table>

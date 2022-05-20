@@ -15,6 +15,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
+    authorize User
     @user.avatar.purge
     @user.destroy
     redirect_to root_path
@@ -29,21 +30,26 @@ class UsersController < ApplicationController
       authorize User
     end
   end
-
+  
   def update
     @user = User.find(params[:id])
+    # TODO, make avatar deletion optional
+    # Included - or there would currently be no way to change avatar
+    if @user.avatar.attached?
+      @user.avatar.purge
+    end
     if current_user.id != @user.id
       authorize User
     end
     if @user.update(user_update_params)
       redirect_to @user
     else
-      render :edit, status: :unprocessable_entity
+      flash[:alert] = "Invalid details"
     end
   end
 
   private
     def user_update_params
-      params.require(:user).permit(:first_name, :last_name, :birth_date, :phone_number, :bio, :listing)
+      params.require(:user).permit(:first_name, :last_name, :birth_date, :phone_number, :bio, :listing, :avatar)
     end
 end
