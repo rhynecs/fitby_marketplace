@@ -31,11 +31,11 @@ Fitby is a two sided marketplace that connects trainers who run fitness classes,
 * Authorisation through Pundit and Rolify
 
 ## Tech stack
+* Ruby on Rails
 * Languages
   * HTML
   * CSS - Bulma
   * ERB
-  * Rails under the hood languages - SQL, JS perhaps
 * Deployment platform: Heroku
 * Image hosting: Cloudinary
 
